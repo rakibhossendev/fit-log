@@ -40,7 +40,7 @@ export default function Navbar() {
                 <ul className="flex flex-col gap-4">
                     <li><a className={`text-sm py-1 px-2 rounded ${pathname === "/"? "bg-[#1A2312] text-[#C2F800]": ""}`}href="#">Workouts</a></li>
                     <li><a className={`text-sm py-1 px-2 rounded ${pathname === "/plans"? "bg-[#1A2312] text-[#C2F800]" : ""}`}href="#">My Plans</a></li>
-                    <li><a href="#">Plan{" "}<span className="rounded px-1 text-black bg-[#C2F800]">0</span></a></li>
+                    <li><a href="#">Plan{" "}<span className="rounded px-1 text-black bg-[p]">0</span></a></li>
                     <li><a href="#">Save <span>0</span></a></li>
                 </ul>
             </div>

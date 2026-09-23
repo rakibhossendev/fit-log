@@ -10,7 +10,7 @@ export default function HeroSection() {
                 <div className="">
                     <p className="font-bold text-[11px] text-[#C2F800] my-4 md:my-8">WORKOUT LIBRARY</p>
                     <h1 className="text-3xl md:text-5xl font-bold my-4 md:my-8">TRAIN WITH INTENT. LOG EVERY SET.</h1>
-                    <p className="my-4 md:my-8 text-[11px]">{`FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up.`}</p>
+                    <p className="my-4 md:my-8 text-[15px]">{`FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up.`}</p>
 
                     <button className="bg-[#C2F800] py-2 px-4 rounded text-black cursor-pointer hover:bg-[#C2F800]">
                         BROWSE WORKOUTS
