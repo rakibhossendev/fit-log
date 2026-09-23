@@ -45,7 +45,7 @@ export default function Navbar() {
                 </ul>
             </div>
         )}
-        <hr />
+        <hr className="text-[#1D1C26]" />
     </nav>
 )
 }
