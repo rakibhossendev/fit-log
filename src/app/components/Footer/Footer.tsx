@@ -5,7 +5,7 @@ export default function Footer(){
 
 
     return (
-        <footer>
+        <footer className="mt-10">
             <hr className="text-[#1D1C26]"/>
             <div className="container mx-auto flex justify-between p-4 items-center">
                 <div className="flex gap-2">
