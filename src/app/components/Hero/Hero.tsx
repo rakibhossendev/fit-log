@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroImage from "@/assets/banner.png"
+import Link from "next/link";
 
 export default function HeroSection() {
 
@@ -12,9 +13,11 @@ export default function HeroSection() {
                     <h1 className="text-3xl md:text-5xl font-bold my-4 md:my-8">TRAIN WITH INTENT. LOG EVERY SET.</h1>
                     <p className="my-4 md:my-8 text-[15px]">{`FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up.`}</p>
 
+                    <Link href="/">
                     <button className="bg-[#C2F800] py-2 px-4 rounded text-black cursor-pointer hover:bg-[#C2F800]">
                         BROWSE WORKOUTS
                     </button>
+                    </Link>
                 </div>
 
                 <div className="flex justify-center">

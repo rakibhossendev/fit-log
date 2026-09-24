@@ -4,6 +4,9 @@ import { Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import PlanContextProvider from "./context/PlanContext";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,11 +33,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className={`min-h-full flex flex-col ${oswald.className}`}>
-        <Navbar/>
-        {children}
 
-        <Footer/>
-        </body>
-    </html>
+        <PlanContextProvider>
+          <Navbar />
+          {children}
+          <ToastContainer />
+          <Footer />
+      </PlanContextProvider>
+
+      </body>  
+    </html >
   );
 }

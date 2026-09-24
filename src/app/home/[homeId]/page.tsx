@@ -57,7 +57,7 @@ export default async function PlanDetails({ params }: { params: Promise<{ homeId
                 {data.instructions.map((item, index) => <li className="py-1 leading-relaxed" key={index}>{`${index + 1}. ${item}`}</li>)}
             </ul>
 
-            <DetailsButton />
+            <DetailsButton data={data} />
         </div>
     </div>
 </section>
