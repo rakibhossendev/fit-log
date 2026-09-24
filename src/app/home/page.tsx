@@ -13,7 +13,7 @@ export default async function PlanPage(){
     return (
         <section className="container mx-auto mt-10">
             <h2 className="text-3xl mt-3 font-bold px-4">THE LIBRARY</h2>
-            <p className="text-sm px-4">Twelve lifts covering every major muscle group.</p>
+            <p className="text-sm px-4 text-[#9CA3AF]">Twelve lifts covering every major muscle group.</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 ">
 

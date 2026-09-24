@@ -54,7 +54,7 @@ export default async function PlanDetails({ params }: { params: Promise<{ homeId
 
             <h1 className="font-bold text-xl py-2 my-3">INSTRUCTION</h1>
             <ul>
-                {data.instructions.map((item, index) => <li className="py-1 leading-relaxed" key={index}>{`${index + 1}. ${item}`}</li>)}
+                {data.instructions.map((item, index) => <li className="py-1 text-[#9CA3AF] leading-relaxed" key={index}>{`${index + 1}. ${item}`}</li>)}
             </ul>
 
             <DetailsButton data={data} />

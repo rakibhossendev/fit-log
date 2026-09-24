@@ -28,13 +28,13 @@ export default function PlanCard({ data }: PlanCardDataProps) {
             </div>
 
             <h1 className="text-2xl font-bold">{data.name}</h1>
-            <p className="text-sm">{data.equipment}</p>
+            <p className="text-sm text-[#9CA3AF]">{data.equipment}</p>
             <hr className="text-[#20242E]" />
 
             <div className="flex gap-4 mt-3">
-                <p className="flex gap-2"><MdOutlineAccessTime />{data.duration} min</p>
-                <p>{data.caloriesBurned}</p>
-                <p className="flex gap-2"> <FaStar />{data.rating}
+                <p className="flex gap-2 text-[#9CA3AF]"><MdOutlineAccessTime />{data.duration} min</p>
+                <p className="text-[#9CA3AF]">{data.caloriesBurned}</p>
+                <p className="flex gap-2 text-[#9CA3AF]"> <FaStar />{data.rating}
                 </p>
             </div>
             

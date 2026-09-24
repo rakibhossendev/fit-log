@@ -3,6 +3,7 @@
 import { PlanContext } from "@/app/context/PlanContext";
 import { useContext, useState } from "react"
 import EmptyCard from "./EmptyCard";
+import AddCard from "./AddCard";
 
 export default function ToggleButton() {
     const [toggle, updateToggle] = useState<boolean>(true);
@@ -28,9 +29,9 @@ export default function ToggleButton() {
             <div>
                 { toggle ?
 
-                    (addToPlan.length === 0 ?  <EmptyCard/> :  <h1>Item here</h1>)
+                    (addToPlan.length === 0 ?  <EmptyCard/> :  addToPlan.map(item => <AddCard key={item.id} toggle={toggle} data={item}></AddCard>))
                     :
-                    (addToSave.length === 0 ? <EmptyCard/> :  <h1>Item here</h1>)
+                    (addToSave.length === 0 ? <EmptyCard/> :  addToSave.map(item => <AddCard key={item.id} toggle={toggle} data={item}></AddCard>))
                 }
             </div>
         </div>

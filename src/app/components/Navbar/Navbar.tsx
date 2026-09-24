@@ -22,8 +22,8 @@ export default function Navbar() {
             </div>
 
             <ul className="hidden md:flex gap-6">
-                <li><Link className={`text-sm py-1 px-2 rounded ${pathname === "/"? "bg-[#1A2312] text-[#C2F800]": ""}`} href="/">Workouts</Link></li>
-                <li><Link className={`text-sm py-1 px-2 rounded ${pathname === "/plans"? "bg-[#1A2312] text-[#C2F800]": ""}`} href="/plans">My Plans</Link></li>
+                <li><Link className={`text-sm py-1 px-2 text-[#9CA3AF] rounded ${pathname === "/"? "bg-[#1A2312] text-[#C2F800]": ""}`} href="/">Workouts</Link></li>
+                <li><Link className={`text-sm py-1 px-2 text-[#9CA3AF] rounded ${pathname === "/plans"? "bg-[#1A2312] text-[#C2F800]": ""}`} href="/plans">My Plans</Link></li>
             </ul>
 
             <ul className="hidden md:flex gap-4">
@@ -41,8 +41,8 @@ export default function Navbar() {
         {isOpen && (
             <div className="md:hidden p-4">
                 <ul className="flex flex-col gap-4">
-                    <li><Link className={`text-sm py-1 px-2 rounded ${pathname === "/"? "bg-[#1A2312] text-[#C2F800]": ""}`} href="/">Workouts</Link></li>
-                    <li><Link className={`text-sm py-1 px-2 rounded ${pathname === "/plans"? "bg-[#1A2312] text-[#C2F800]" : ""}`} href="/plans">My Plans</Link></li>
+                    <li><Link className={`text-sm text-[#9CA3AF] py-1 px-2 rounded ${pathname === "/"? "bg-[#1A2312] text-[#C2F800]": ""}`} href="/">Workouts</Link></li>
+                    <li><Link className={`text-sm text-[#9CA3AF] py-1 px-2 rounded ${pathname === "/plans"? "bg-[#1A2312] text-[#C2F800]" : ""}`} href="/plans">My Plans</Link></li>
                     <li><Link href="/plans">Plan{" "}<span className="rounded px-1 text-black bg-[p]">{addToPlan.length}</span></Link></li>
                     <li><a href="#">Save <span>{addToSave.length}</span></a></li>
                 </ul>
