@@ -4,6 +4,7 @@ import navLogo from "@/assets/logo.png"
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import Link from "next/link";
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -19,8 +20,8 @@ export default function Navbar() {
             </div>
 
             <ul className="hidden md:flex gap-6">
-                <li><a className={`text-sm py-1 px-2 rounded ${pathname === "/"? "bg-[#1A2312] text-[#C2F800]": ""}`} href="#">Workouts</a></li>
-                <li><a className={`text-sm py-1 px-2 rounded ${pathname === "/plans"? "bg-[#1A2312] text-[#C2F800]": ""}`} href="#">My Plans</a></li>
+                <li><Link className={`text-sm py-1 px-2 rounded ${pathname === "/"? "bg-[#1A2312] text-[#C2F800]": ""}`} href="/">Workouts</Link></li>
+                <li><Link className={`text-sm py-1 px-2 rounded ${pathname === "/plans"? "bg-[#1A2312] text-[#C2F800]": ""}`} href="#">My Plans</Link></li>
             </ul>
 
             <ul className="hidden md:flex gap-4">

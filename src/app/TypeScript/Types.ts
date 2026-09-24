@@ -11,7 +11,7 @@ export interface PlanDataType{
     reps: string;
     rating: number;
     description: string;
-    instruction: string[];
+    instructions: string[];
 }
 
 //   {

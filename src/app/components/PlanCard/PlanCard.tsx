@@ -1,5 +1,6 @@
 import { PlanDataType } from "@/app/TypeScript/Types"
 import Image from "next/image"
+import Link from "next/link"
 import { FaStar } from "react-icons/fa"
 import { MdOutlineAccessTime } from "react-icons/md"
 
@@ -8,10 +9,11 @@ interface PlanCardDataProps {
 }
 
 export default function PlanCard({ data }: PlanCardDataProps) {
+
     return (
 
+    <Link href={`/home/${data.id}`}>
     <div className="card shadow-md bg-[#15171D] cursor-pointer border-[#222630] border-2 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-       
         <figure className="overflow-hidden">
             <Image src={data.image} width={430} height={10} className="h-60 w-full object-cover transition-transform duration-500 hover:scale-105" alt={`${data.image} photo`}/>
         </figure>
@@ -39,6 +41,7 @@ export default function PlanCard({ data }: PlanCardDataProps) {
         </div>
 
     </div>
+    </Link>
 
     )
 }
