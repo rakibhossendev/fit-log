@@ -5,7 +5,7 @@ import Image from "next/image";
 export default async function PlanDetails({ params }: { params: Promise<{ homeId: string }> }) {
     const { homeId } = await params;
 
-    const response = await fetch(`https://api.abcz.workers.dev/api/fitlog/${homeId}`);
+    const response = await fetch(`https://api.abcz.workers.dev/api/fitlog/${homeId}`,{cache: "force-cache"});
     const data: PlanDataType = await response.json();
 
     return (

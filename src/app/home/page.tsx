@@ -1,5 +1,7 @@
 import { PlanDataType } from "@/app/TypeScript/Types";
 import PlanCard from "../components/PlanCard/PlanCard";
+import { Suspense } from "react";
+import CardSkeleton from "../components/skeleton/CardSkeleton";
 
 export default async function PlanPage(){
     const response = await fetch('https://api.abcz.workers.dev/api/fitlog',{cache:"force-cache"});
@@ -14,7 +16,13 @@ export default async function PlanPage(){
             <p className="text-sm px-4">Twelve lifts covering every major muscle group.</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 ">
-                {planData.map(data => <PlanCard key={data.id} data={data}/>)}
+
+                
+                {planData.map(data =>
+                    <Suspense key={data.id} fallback={<CardSkeleton></CardSkeleton>}>
+                        <PlanCard key={data.id} data={data}/>
+                    </Suspense> 
+                )}
 
             </div>
         </section>
