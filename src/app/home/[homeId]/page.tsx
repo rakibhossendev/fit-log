@@ -18,7 +18,7 @@ export default async function PlanDetails({ params }: { params: Promise<{ homeId
 
         <div className="w-full">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold py-2 wrap-words">{data.name}</h1>
-            <p className="text-base md:text-lg font-light py-2 leading-relaxed">{data.description}</p>
+            <p className="text-base md:text-lg font-light py-2 leading-relaxed text-[#8A92A0]">{data.description}</p>
 
             <div className="flex gap-3 flex-wrap py-2">
                 {data.muscleGroups.map((item, index) =>

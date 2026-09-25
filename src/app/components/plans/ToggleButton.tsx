@@ -21,9 +21,9 @@ export default function ToggleButton() {
             sortedData.sort((a,b) => b.duration - a.duration);
         }else if(sortBy === "calories"){
             sortedData.sort((a,b) => b.caloriesBurned - a.caloriesBurned)
-        }else(
+        }else{
             sortedData.sort((a,b) => b.rating - a.rating)
-        )
+        }
 
         return sortedData;
     }
@@ -52,7 +52,7 @@ export default function ToggleButton() {
                             Sort
                         </p>
 
-                        <select value={sortBy} onChange={(e) => updateSortBy(e.target.value as "duration" | "calories" | "rating")} defaultValue="Pick a browser" className="select rounded-2xl">
+                        <select value={sortBy} onChange={(e) => updateSortBy(e.target.value as "duration" | "calories" | "rating")}  className="select rounded-2xl">
                             <option value={"duration"}>Duration</option>
                             <option value={"calories"}>Calories</option>
                             <option value={"rating"}>Rating</option>
