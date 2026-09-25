@@ -8,6 +8,9 @@ interface PlanContextType{
     updateAddToPlan: Dispatch<SetStateAction<PlanDataType[]>>
     addToSave: PlanDataType[];
     updateAddToSave: Dispatch<SetStateAction<PlanDataType[]>>
+    toggle: boolean;
+    updateToggle: Dispatch<SetStateAction<boolean>>
+
 }
 
 export const PlanContext = createContext<PlanContextType>({
@@ -15,17 +18,22 @@ export const PlanContext = createContext<PlanContextType>({
     updateAddToPlan: () => {},
     addToSave: [],
     updateAddToSave: () => {},
+    toggle: true,
+    updateToggle: () => {},
 });
 
 export default function PlanContextProvider({children}:{children: React.ReactNode}){
     const [addToPlan,updateAddToPlan] = useState<PlanDataType[]>([]);
     const [addToSave,updateAddToSave] = useState<PlanDataType[]>([]);
+    const [toggle, updateToggle] = useState<boolean>(true);
 
     const allContext: PlanContextType = {
         addToPlan,
         updateAddToPlan,
         addToSave,
-        updateAddToSave
+        updateAddToSave,
+        toggle,
+        updateToggle
     }
 
     return (

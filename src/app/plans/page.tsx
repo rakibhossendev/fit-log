@@ -2,6 +2,7 @@ import MatrixSummaryCard from "../components/plans/MatrixSummaryCard";
 import ToggleButton from "../components/plans/ToggleButton";
 
 export default function Plan(){
+   
 
     return (
         <section className="mt-10">
@@ -12,9 +13,7 @@ export default function Plan(){
                 <MatrixSummaryCard/>
 
                 <ToggleButton/>
-                
-
-                
+            
             </div>
         </section>
     )

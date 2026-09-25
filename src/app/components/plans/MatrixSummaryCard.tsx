@@ -3,16 +3,18 @@ import { PlanContext } from "@/app/context/PlanContext"
 import { useContext } from "react"
 
 export default function MatrixSummaryCard() {
-    const {addToPlan} = useContext(PlanContext);
+    const {addToPlan,addToSave,toggle} = useContext(PlanContext);
+
+    const showMatrixData = toggle ? addToPlan : addToSave;
     
-    const minutes = addToPlan.reduce((accumulator,item) => accumulator+ item.duration ,0);
-    const calories = addToPlan.reduce((accumulator,item) => accumulator + item.caloriesBurned,0)
+    const minutes = showMatrixData.reduce((accumulator,item) => accumulator+ item.duration ,0);
+    const calories = showMatrixData.reduce((accumulator,item) => accumulator + item.caloriesBurned,0)
 
     return (
         <div className="mt-5 grid grid-cols-3 items-center justify-center p-8 border-2 border-[#232732] rounded-2xl bg-[#13161D]">
             <div className="text-left px-2 mt-2 ">
                 <p className="font-light text-[#8A92A0]">Exercises</p>
-                <h2 className="font-bold text-2xl text-[#CCFF00]">{addToPlan.length}</h2>
+                <h2 className="font-bold text-2xl text-[#CCFF00]">{showMatrixData.length}</h2>
             </div>
 
             <div className="text-center px-2 mt-2 border-l-2 border-[#232732]">
