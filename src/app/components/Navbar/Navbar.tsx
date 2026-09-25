@@ -32,16 +32,16 @@ export default function Navbar() {
 
                 <ul className="hidden md:flex gap-4">
                     <li>
-                        <button className={`flex cursor-pointer items-center gap-2 ${toggle ? "text-[#D1D5DB]" : "text-[#2D313B]"}`} onClick={handleToggle}>
+                        <Link className={`flex cursor-pointer items-center gap-2 ${toggle ? "text-[#D1D5DB]" : "text-[#2D313B]"}`} onClick={handleToggle} href="/plans">
                             Plan
                             <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs text-black bg-[#C2F800]">{addToPlan.length}</span>
-                        </button>
+                        </Link>
                     </li>
                     <li>
-                        <button className={`flex cursor-pointer items-center gap-2 ${!toggle ? "text-[#D1D5DB]" : "text-[#2D313B]"}`} onClick={handleToggle}>
+                        <Link className={`flex cursor-pointer items-center gap-2 ${!toggle ? "text-[#D1D5DB]" : "text-[#2D313B]"}`} href="/plans" onClick={handleToggle}>
                             Save
                             <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs border-2 border-[#2D313B]">{addToSave.length}</span>
-                        </button>
+                        </Link>
                     </li>
                 </ul>
 
@@ -60,16 +60,16 @@ export default function Navbar() {
                         <li><Link className={`text-sm text-[#9CA3AF] py-1 px-2 rounded ${pathname === "/" ? "bg-[#1A2312] text-[#C2F800]" : ""}`} href="/">Workouts</Link></li>
                         <li><Link className={`text-sm text-[#9CA3AF] py-1 px-2 rounded ${pathname === "/plans" ? "bg-[#1A2312] text-[#C2F800]" : ""}`} href="/plans">My Plans</Link></li>
                         <li>
-                            <button className={`flex cursor-pointer items-center gap-2 ${toggle ? "text-[#D1D5DB]" : "text-[#2D313B]"}`} onClick={handleToggle}>
+                            <Link className={`flex cursor-pointer items-center gap-2 ${toggle ? "text-[#D1D5DB]" : "text-[#2D313B]"}`} href="/plans" onClick={handleToggle}>
                                 Plan
                                 <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs text-black bg-[#C2F800]">{addToPlan.length}</span>
-                            </button>
+                            </Link>
                         </li>
                         <li>
-                            <button className={`flex cursor-pointer items-center gap-2 ${!toggle ? "text-[#D1D5DB]" : "text-[#2D313B]"}`} onClick={handleToggle}>
+                            <Link className={`flex cursor-pointer items-center gap-2 ${!toggle ? "text-[#D1D5DB]" : "text-[#2D313B]"}`} href="/plans" onClick={handleToggle}>
                                 Save
                                 <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs border-2 border-[#2D313B]">{addToSave.length}</span>
-                            </button>
+                            </Link>
                         </li>
                     </ul>
                 </div>
