@@ -11,12 +11,19 @@ interface PlanButtonDataProps{
 }
 
 export default function AddCardRightButton({data}: PlanButtonDataProps) {
-    const {addToPlan,updateAddToPlan} = useContext(PlanContext);
+    const {addToPlan,updateAddToPlan,markAsDoneItems,updateMarkAsDone} = useContext(PlanContext);
 
     const handlePlanData = (): void => {
         const remaining = addToPlan.filter(item => item.id !== data.id);
         updateAddToPlan(remaining);
         toast.success(`${data.name} was removed successfully`)
+    }
+
+    const handleMarkAsDone = (): void => {
+        updateMarkAsDone([...markAsDoneItems,data])
+
+        const remaining = addToPlan.filter(item => item.id !== data.id);
+        updateAddToPlan(remaining)
     }
 
     return (
@@ -27,7 +34,7 @@ export default function AddCardRightButton({data}: PlanButtonDataProps) {
             </button>
             </Link>
 
-            <button  className="font-bold cursor-pointer  text-sm py-2 px-3 sm:px-4 rounded-2xl bg-[#CCFF00] text-black">
+            <button onClick={handleMarkAsDone}  className="font-bold cursor-pointer  text-sm py-2 px-3 sm:px-4 rounded-2xl bg-[#CCFF00] text-black">
                 Mark as Done
             </button>
             <button onClick={handlePlanData}  className="mx-1 font-bold  cursor-pointer text-xl p-2">
