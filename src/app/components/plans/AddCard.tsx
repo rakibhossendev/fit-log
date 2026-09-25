@@ -16,32 +16,58 @@ export default function AddCard({ data,toggle}: PlanDataProps) {
     console.log(data)
 
 return (
-    <div className="grid grid-cols-[auto_1fr_auto] gap-3 sm:gap-4 md:gap-6 mt-5 items-center bg-[#14171E] rounded-2xl p-3 sm:p-4">
-        <div>
-            <Image src={data.image} className="w-20 h-16 sm:w-28 sm:h-20 md:w-32 md:h-24 rounded-2xl object-cover" width={200} height={100} alt={`${data.name} photo`}/>
-        </div>
+    <div className="mt-5 grid grid-cols-1 gap-3 rounded-2xl bg-[#14171E] p-3 sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-4 sm:p-4 md:gap-6">
 
-        <div className="min-w-0 ml-1">
-            <h1 className="text-base sm:text-lg md:text-xl font-bold truncate">{data.name}</h1>
-            <p className="text-xs sm:text-sm my-2 sm:my-3 text-[#8A92A0] truncate">{data.equipment}</p>
+        
+        <div className="flex min-w-0 items-center gap-3 sm:contents">
 
-            <div className="flex flex-wrap gap-3 sm:gap-4">
-                <p className="flex text-xs sm:text-sm text-[#8A92A0] gap-1 items-center whitespace-nowrap">
-                    <MdOutlineAccessTime className="text-[#C2F800] text-sm" />
-                    {data.duration} min
-                </p>
-                <p className="text-xs sm:text-sm text-[#8A92A0] whitespace-nowrap">{data.caloriesBurned} kcal</p>
-                <p className="flex text-xs sm:text-sm text-[#8A92A0] gap-1 items-center whitespace-nowrap">
-                    <FaStar className="text-[#C2F800] text-sm" />
-                    {data.rating}
-                </p>
+            <div className="shrink-0">
+                <Image
+                    src={data.image}
+                    className="h-16 w-20 rounded-2xl object-cover sm:h-20 sm:w-28 md:h-24 md:w-32"
+                    width={200}
+                    height={100}
+                    alt={`${data.name} photo`}
+                />
             </div>
-            
+
+            <div className="min-w-0 flex-1 sm:ml-1">
+                <h1 className="truncate text-base font-bold sm:text-lg md:text-xl">
+                    {data.name}
+                </h1>
+
+                <p className="my-2 truncate text-xs text-[#8A92A0] sm:my-3 sm:text-sm">
+                    {data.equipment}
+                </p>
+
+                <div className="flex flex-wrap gap-x-3 gap-y-1 sm:gap-x-4">
+                    <p className="flex items-center gap-1 whitespace-nowrap text-xs text-[#8A92A0] sm:text-sm">
+                        <MdOutlineAccessTime className="text-sm text-[#C2F800]" />
+                        {data.duration} min
+                    </p>
+
+                    <p className="whitespace-nowrap text-xs text-[#8A92A0] sm:text-sm">
+                        {data.caloriesBurned} kcal
+                    </p>
+
+                    <p className="flex items-center gap-1 whitespace-nowrap text-xs text-[#8A92A0] sm:text-sm">
+                        <FaStar className="text-sm text-[#C2F800]" />
+                        {data.rating}
+                    </p>
+                </div>
+            </div>
+
         </div>
 
-        {toggle ? <AddCardRightButton data={data} /> : <AddCardSaveButtons data={data} />}
-
+        {/* Buttons */}
+        <div className="w-full sm:w-auto">
+            {toggle ? (
+                <AddCardRightButton data={data} />
+            ) : (
+                <AddCardSaveButtons data={data} />
+            )}
+        </div>
     </div>
-
 )
+
 }
