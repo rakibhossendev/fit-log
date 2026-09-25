@@ -24,6 +24,8 @@ export default function AddCardRightButton({data}: PlanButtonDataProps) {
 
         const remaining = addToPlan.filter(item => item.id !== data.id);
         updateAddToPlan(remaining)
+
+        toast.success(`${data.name} is done`)
     }
 
     return (

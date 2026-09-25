@@ -37,11 +37,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <PlanContextProvider>
           <Navbar />
           {children}
-          <ToastContainer />
+          <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            theme="dark"
+            toastClassName="bg-[#14171E] text-white rounded-2xl"
+            progressClassName="bg-[#C2F800]"
+          />
           <Footer />
-      </PlanContextProvider>
+        </PlanContextProvider>
 
-      </body>  
+      </body>
     </html >
   );
 }
