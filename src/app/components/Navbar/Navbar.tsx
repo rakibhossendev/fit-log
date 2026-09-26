@@ -60,10 +60,6 @@ export default function Navbar() {
                 </button>
 
             </div>
-
-
-
-
             {isOpen && (
                 <div className="md:hidden p-4">
                     <ul className="flex flex-col gap-4">
