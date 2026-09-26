@@ -1,7 +1,7 @@
 
 import { PlanDataType } from "@/app/TypeScript/Types"
 import Image from "next/image"
-import { FaStar } from "react-icons/fa"
+import { FaFire, FaStar } from "react-icons/fa"
 import { MdOutlineAccessTime } from "react-icons/md"
 import AddCardRightButton from "./PlanRightButtons";
 import AddCardSaveButtons from "./AddCardSaveButtons";
@@ -13,7 +13,7 @@ interface PlanDataProps {
 }
 
 export default function AddCard({ data,toggle}: PlanDataProps) {
-    console.log(data)
+
 
 return (
     <div className="mt-5 grid grid-cols-1 gap-3 rounded-2xl bg-[#14171E] p-3 sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-4 sm:p-4 md:gap-6">
@@ -46,8 +46,8 @@ return (
                         {data.duration} min
                     </p>
 
-                    <p className="whitespace-nowrap text-xs text-[#8A92A0] sm:text-sm">
-                        {data.caloriesBurned} kcal
+                    <p className="flex items-center gap-2 whitespace-nowrap text-xs text-[#8A92A0] sm:text-sm">
+                       <FaFire className="text-sm text-[#C2F800]" /> {data.caloriesBurned} kcal
                     </p>
 
                     <p className="flex items-center gap-1 whitespace-nowrap text-xs text-[#8A92A0] sm:text-sm">

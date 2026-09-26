@@ -22,16 +22,21 @@ export default function DetailsButton({data}: ButtonDataProps) {
             return
         }
         updateAddToPlan([...addToPlan,data])
+        localStorage.setItem("planData",JSON.stringify([...addToPlan,data]));
         updateAddPlanStatus(!addPlanStatus);
         toast.success("Plan added successfully.")
     }
+
     const handleAddToSave = () => {
         const exists = addToSave.find(item => item.id === data.id);
         if(exists){
             toast.info("Item is already saved.");
             return
         }
-        updateAddToSave([...addToSave,data])
+        
+        const newData = [...addToSave,data]
+        updateAddToSave(newData);
+        localStorage.setItem("savedPlans",JSON.stringify(newData));
         updateSaveStatus(!saveStatus);
         toast.success("Plan saved successfully")
     }

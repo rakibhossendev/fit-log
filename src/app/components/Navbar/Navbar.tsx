@@ -2,15 +2,16 @@
 import Image from "next/image";
 import navLogo from "@/assets/logo.png"
 import { usePathname } from "next/navigation";
-import { useContext, useState } from "react";
+import { useContext,useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
 import { PlanContext } from "@/app/context/PlanContext";
 
+
 export default function Navbar() {
     const pathname = usePathname();
     const [isOpen, updateOpen] = useState<boolean>(false);
-    const { addToPlan, addToSave, toggle, updateToggle } = useContext(PlanContext);
+    const { addToPlan, addToSave, toggle, updateToggle } = useContext(PlanContext); 
 
     const handleToggle = (): void => {
         updateToggle(!toggle)
@@ -40,7 +41,7 @@ export default function Navbar() {
                     <li>
                         <Link className={`flex cursor-pointer items-center gap-2 ${!toggle ? "text-[#D1D5DB]" : "text-[#2D313B]"}`} href="/plans" onClick={handleToggle}>
                             Save
-                            <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs border-2 border-[#2D313B]">{addToSave.length}</span>
+                            <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs border-2 border-[#2D313B]" >{addToSave.length}</span>
                         </Link>
                     </li>
                 </ul>

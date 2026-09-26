@@ -26,8 +26,27 @@ export const PlanContext = createContext<PlanContextType>({
 });
 
 export default function PlanContextProvider({children}:{children: React.ReactNode}){
-    const [addToPlan,updateAddToPlan] = useState<PlanDataType[]>([]);
-    const [addToSave,updateAddToSave] = useState<PlanDataType[]>([]);
+    const [addToPlan,updateAddToPlan] = useState<PlanDataType[]>( ()=> {
+        if(typeof window === 'undefined'){
+            return [];
+        }
+        const savedPlanData = localStorage.getItem("planData");
+        if(savedPlanData){
+            return JSON.parse(savedPlanData);
+        }
+        return [];
+    });
+    const [addToSave,updateAddToSave] = useState<PlanDataType[]>(()=> {
+        if(typeof window === 'undefined'){
+            return []
+        }
+        const savedData = localStorage.getItem("savedPlans");
+        if(savedData){
+           return JSON.parse(savedData)
+        }
+        return [];
+    });
+
     const [toggle, updateToggle] = useState<boolean>(true);
     const [markAsDoneItems,updateMarkAsDone] = useState<PlanDataType[]>([]);
 

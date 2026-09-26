@@ -1,7 +1,7 @@
 import { PlanDataType } from "@/app/TypeScript/Types"
 import Image from "next/image"
 import Link from "next/link"
-import { FaStar } from "react-icons/fa"
+import { FaFire, FaStar } from "react-icons/fa"
 import { MdOutlineAccessTime } from "react-icons/md"
 
 interface PlanCardDataProps {
@@ -33,7 +33,7 @@ export default function PlanCard({ data }: PlanCardDataProps) {
 
             <div className="flex gap-4 mt-3">
                 <p className="gap-2 text-[#9CA3AF] flex items-center"><MdOutlineAccessTime />{data.duration} min</p>
-                <p className="text-[#9CA3AF] ">{data.caloriesBurned} kcal</p>
+                <p className="text-[#9CA3AF] flex items-center gap-2"><FaFire />{data.caloriesBurned} kcal</p>
                 <p className="gap-2 text-[#9CA3AF] flex items-center"> <FaStar />{data.rating}
                 </p>
             </div>

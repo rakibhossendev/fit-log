@@ -6,9 +6,11 @@ import EmptyCard from "./EmptyCard";
 import AddCard from "./AddCard";
 import { PlanDataType } from "@/app/TypeScript/Types";
 
+
 export default function ToggleButton() {
-    const { addToPlan, addToSave,toggle,updateToggle } = useContext(PlanContext);
-    const [sortBy,updateSortBy] = useState<"duration" | "calories" | "rating">("duration");
+    const { addToPlan, addToSave, toggle, updateToggle } = useContext(PlanContext);
+    const [sortBy, updateSortBy] = useState<"duration" | "calories" | "rating">("duration");
+    
 
     const handleToggle = (): void => {
         updateToggle(!toggle)
@@ -17,19 +19,20 @@ export default function ToggleButton() {
     const sortPlans = (data: PlanDataType[]): PlanDataType[] => {
         const sortedData = [...data];
 
-        if(sortBy === "duration"){
-            sortedData.sort((a,b) => b.duration - a.duration);
-        }else if(sortBy === "calories"){
-            sortedData.sort((a,b) => b.caloriesBurned - a.caloriesBurned)
-        }else{
-            sortedData.sort((a,b) => b.rating - a.rating)
+        if (sortBy === "duration") {
+            sortedData.sort((a, b) => b.duration - a.duration);
+        } else if (sortBy === "calories") {
+            sortedData.sort((a, b) => b.caloriesBurned - a.caloriesBurned)
+        } else {
+            sortedData.sort((a, b) => b.rating - a.rating)
         }
 
         return sortedData;
     }
-
+    
     const sortedAddPlans = sortPlans(addToPlan);
     const sortSavedPlans = sortPlans(addToSave);
+
 
     return (
 
@@ -52,7 +55,7 @@ export default function ToggleButton() {
                             Sort
                         </p>
 
-                        <select value={sortBy} onChange={(e) => updateSortBy(e.target.value as "duration" | "calories" | "rating")}  className="select rounded-2xl">
+                        <select value={sortBy} onChange={(e) => updateSortBy(e.target.value as "duration" | "calories" | "rating")} className="select rounded-2xl">
                             <option value={"duration"}>Duration</option>
                             <option value={"calories"}>Calories</option>
                             <option value={"rating"}>Rating</option>

@@ -16,6 +16,7 @@ export default function AddCardRightButton({data}: PlanButtonDataProps) {
     const handlePlanData = (): void => {
         const remaining = addToPlan.filter(item => item.id !== data.id);
         updateAddToPlan(remaining);
+        localStorage.setItem("planData",JSON.stringify(remaining));
         toast.success(`${data.name} was removed successfully`)
     }
 
@@ -23,8 +24,8 @@ export default function AddCardRightButton({data}: PlanButtonDataProps) {
         updateMarkAsDone([...markAsDoneItems,data])
 
         const remaining = addToPlan.filter(item => item.id !== data.id);
-        updateAddToPlan(remaining)
-
+        updateAddToPlan(remaining);
+        // localStorage.setItem("planData",JSON.stringify(remaining));
         toast.success(`${data.name} is done`)
     }
 

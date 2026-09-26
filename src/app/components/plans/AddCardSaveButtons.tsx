@@ -16,7 +16,8 @@ export default function AddCardSaveButtons({ data }: SavaDataProps) {
 
     const handleRemoveData = (): void => {
         const remaining = addToSave.filter(item => item.id !== data.id);
-        updateAddToSave(remaining)
+        updateAddToSave(remaining);
+        localStorage.setItem("savedPlans",JSON.stringify(remaining))
         toast.success(`${data.name} wad removed successfully`)
     }
 
