@@ -7,7 +7,6 @@ export default async function PlanPage(){
     const response = await fetch('https://api.abcz.workers.dev/api/fitlog',{cache:"force-cache"});
     const planData: PlanDataType[] = await response.json();
 
-    // console.log(data);
 
     
     return (
