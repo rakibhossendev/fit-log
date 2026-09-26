@@ -1,9 +1,8 @@
 ## Project Name: FitLog
 
 ## Description
-```
+
 This is a fitlog web site. There you can track your fit progress. You can add your exercise and show how many duration,calories. And if you went you can save your plans i save section. You can view details of your exercise. 
-```
 
 ### Technologies 
 - Next.js
